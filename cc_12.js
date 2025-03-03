@@ -89,3 +89,20 @@ function addInventoryItem(itemName) {
     //Appending the new item to the inventory list
     inventoryList.appendChild(newItem); 
 }
+
+// Task 4 Business Customer Section – Handling Event Bubbling
+
+const CustomerSection = document.getElementById("customerSection"); // Selecting the customer section
+
+CustomerSection.addEventListener("click", (event) => {
+    console.log("Customer card Has been clicked")
+}); // Added Event Listener to customer section
+
+const customerCards = document.querySelectorAll(".customer-card"); // Used query selector to select customer cards
+customerCards.forEach((card) => {
+    card.style.backgroundColor = "blue"; // Changed background color to blue
+    card.addEventListener("click", (event) => {
+        console.log("Customer card Has been clicked"); // Added Event Listener to customer cards
+        event.stopPropagation(); // Used stop propagation to prevent console logging from both customer section and customer cards
+    });
+}); 
