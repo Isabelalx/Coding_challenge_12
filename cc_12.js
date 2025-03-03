@@ -41,4 +41,20 @@ dashboardId.appendChild(revenueCard);
 dashboardId.appendChild(profitCard);
 dashboardId.appendChild(expenseCard);
 
+// Task 2
+// Updating Dashboard Metrics
+
+const metricCards = document.querySelectorAll(".metric-card");  
+const metricCardsArray = Array.from(metricCards);
+
+metricCardsArray.forEach(card => {
+    // Appending " - Updated" to the title
+    const titleElement = card.querySelector("h3");
+    titleElement.textContent += " - Updated";
+// Modifying the style: changing the background color
+card.style.backgroundColor = rgb(29, 226, 240); 
+card.style.padding = "10px";
+card.style.borderRadius = "8px";
+});
+
 
